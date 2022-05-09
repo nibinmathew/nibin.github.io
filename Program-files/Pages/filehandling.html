@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css"></link>
+    <link rel="stylesheet" href="../css/home.css"></link>
+<title> File Handling Page </title>
+</head>
+
+<body>
+<p>This page reads from a text file and renders on html</p><br>
+
+<!-- Method 1 - embed tag -->
+<p> <embed src="text.txt"> </p>
+
+<!-- Method 2 - using fetch in Javascript - This will work only if the webpage to be hosted on local server -->
+<p id="text-from-file-using-fetch"> </p>
+<script>
+    const fileUrl = 'text.txt' // provide file location
+    fetch(fileUrl)
+   .then( response => response.text() )
+   .then( text => document.getElementById('text-from-file-using-fetch').innerHTML = text )
+</script>
+
+<!-- Method 3 - using input tag -->
+<input type="file" >
+<p id="text-from-file-using-input"> </p>
+<script>
+    var input = document.querySelector('input')
+    let textarea = document.getElementById('text-from-file-using-input')
+
+  input.addEventListener('change', () => {
+      let files = input.files;
+      if (files.length == 0) return;
+      const file = files[0];
+      let reader = new FileReader();
+      reader.onload = (e) => {
+          const file = e.target.result;
+          // This is a regular expression to identify carriage 
+          // Returns and line breaks
+          const lines = file.split(/\r\n|\n/);
+          textarea.innerHTML = file
+    
+      };
+      reader.onerror = (e) => alert(e.target.error.name);
+      reader.readAsText(file);  
+  });
+</script>
+
+</body>
+</html>

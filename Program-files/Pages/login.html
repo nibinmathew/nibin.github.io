@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css"></link>
+    <link rel="stylesheet" href="./css/home.css"></link>
+<title> Page 10: Login form </title>
+</head>
+
+<body>
+<p>Welcome to your first login page!</p><br>
+
+<p>Fill the following details on the login form and see your first full fledged website.</p><br>
+
+<h3> Login to my site </h3>
+<form id="loginform" method='post'>
+<fieldset>
+<legend>Login Information (Required)</legend>
+  <label for="username">Username: </label> 
+  <input type="text" id="username"></p>
+  <label for="password">Password: </label> 
+  <input type="password" id="password"></p>
+  <label for="submit">Login: </label> 
+  <input type="submit" id="submit" class="submit"></p>
+
+</fieldset>
+
+<script>
+   var username = document.getElementById('username');
+   var password = document.getElementById('password');
+
+  document.querySelector('#loginform').addEventListener('submit', function (e) {
+  //prevent the normal submission of the form
+  e.preventDefault();
+  if(username.value==="")
+  {
+    alert("Please enter your username");
+  }
+  else if(password.value!=="password")
+  {
+    alert("Please enter the correct password");
+  }
+  else
+  {
+    window.location.href="home.html";
+  }
+  });
+
+</script>
+</div>
+
+<div role='contentinfo' class="footer">
+  © 2021 Vision Empower Trust. All rights reserved.
+</div>
+</body>
+</html>

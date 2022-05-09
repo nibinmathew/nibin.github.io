@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css"></link>
+<title>Page8-Internet Form</title>
+</head>
+
+<body>
+<p class="heading"> Forms on web pages </p>
+<p>
+You may be required to fill various forms on websites in future. The following activity will help you understand the structure of the form and how to fill them using NVDA. You may be already aware of the form control from the dialog window controls.
+
+<p>You can use the following keys to navigate through the page:</p>
+<p>Tab key to navigate through the controls</p>
+<p>Arrow key to navigate elements inside group controls.</p>
+<p>Alt+Down arrow to expand the combo boxes.</p>
+<p>Space key to activate buttons, checkbox and radio button.</p><br>
+
+<h2> Fill the form</h2>
+
+<form onsubmit="showAlert()">
+  <label for="name">Enter your name:</label> 
+  <input type="text" name="name" id="name" tabindex="0"style="font-size: 20px;/>
+
+<label for="state">Select the State you are living:</label> 
+<select name="state" id="state" tabindex="0" style="font-size: 20px;"/>
+  <option value="state1" style="font-size: 20px;">state1</option>
+</select>
+
+<fieldset>
+    <legend>What is your preferred mode of learning?</legend>
+    <input type="radio" id="r1" name="radio_button"> 
+<label for="r1">Online</label>
+    <input type="radio" id="r2" name="radio_button"> 
+<label for="r2">Offline</label>
+</fieldset>
+<fieldset>
+            <legend>Select all the devices which you have from below</legend>
+            <input type="checkbox" name="check-box" value="Laptop" id="laptop">
+<label for="laptop" style="color: green">Laptop</label>
+<br>
+            <input type="checkbox" name="check-box" value="Desktop" id="Desktop"> 
+<label for="Desktop" style="color: green">Desktop</label><br>
+            <input type="checkbox" name="check-box" value="Mobile"  id="Mobile"> 
+<label for="Mobile" style="color: green">Mobile</label>
+            <input type="checkbox" name="check-box" value="Tablet"  id="Tablet"> 
+<label for="Tablet" style="color: green">Tablet</label>
+            </legend> Select all the items you like to do </legend>
+            <!-- Check for missing information -->
+</fieldset>
+<br/>
+<button type="submit" id="b1" tabindex="0"  class="submit">Save my details</button>
+<script>
+    function showAlert()
+    {
+        alert("Your details have been saved");
+    }
+</script>
+</form>
+
+<br>
+<div>
+<a href="video.html" class="button">Next page</a>
+</div>
+<div>
+<a href="table.html" class="button">Previous page </a>
+</div>
+
+
+</body>
+</html>
+
